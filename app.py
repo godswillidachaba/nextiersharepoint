@@ -102,7 +102,7 @@ filtered_df.index += 1
 
 
 
-st.dataframe(filtered_df, use_container_width=False)
+st.dataframe(filtered_df, use_container_width=True)
 
 
 
@@ -133,6 +133,18 @@ fig = px.bar(filtered_df, x=analyze_by, y='Fullname', orientation='h', text=anal
 
 
 fig.update_traces(texttemplate='%{text}', textposition='outside')
+
+count = len(filtered_df)
+
+
+
+if count >20:
+    
+    fig.update_layout(height=900)
+
+else:
+
+    fig.update_layout(height=500)
 
 
 st.plotly_chart(fig, use_container_width=True)
