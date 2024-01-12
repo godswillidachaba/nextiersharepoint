@@ -46,7 +46,7 @@ st.markdown("""
 
 
 
-business_units = list( sorted( df['Business Unit'].unique() ) )
+business_units = ['All'] + list( sorted( df['Business Unit'].unique() ) )
 
 selected_business_unit = st.sidebar.selectbox("Business Unit", business_units)   # Select Box
 
